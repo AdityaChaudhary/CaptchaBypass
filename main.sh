@@ -40,5 +40,9 @@ else
       exit
   fi
 
-	for i in `seq 1 $3`; do tmp=$RANDOM; curl --silent $2 > $tmp.png && tesseract $tmp.png -> $tmp.txt && txt=$(cat $tmp.txt) && echo $txt && rm $tmp.txt && mv $tmp.png $txt.png; done
+	for i in `seq 1 $3`;
+    do
+      tmp=$RANDOM
+      curl --silent $2 > $tmp.png && tesseract $tmp.png -> $tmp.txt && txt=$(cat $tmp.txt) && echo $txt && rm $tmp.txt && mv $tmp.png $txt.png
+    done
 fi
